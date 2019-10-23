@@ -13,4 +13,12 @@ public class treasureHunt {
         int horizonOutput = baseHorizon + horizon;
         return horizonOutput;
     }
+
+    public int getBaseVertical() {
+        return baseVertical;
+    }
+
+    public int getBaseHorizon() {
+        return baseHorizon;
+    }
 }
