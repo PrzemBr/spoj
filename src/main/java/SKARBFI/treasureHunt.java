@@ -14,11 +14,24 @@ public class treasureHunt {
         return horizonOutput;
     }
 
-    public int getBaseVertical() {
-        return baseVertical;
+    public String showVerticalCoordinate(int vertical) {
+        if (vertical > 0) {
+            return "0 " + vertical;
+        } else if (vertical < 0) {
+            return "1 " + Math.abs(vertical);
+        } else {
+            return "0 " + vertical;
+        }
     }
 
-    public int getBaseHorizon() {
-        return baseHorizon;
+    public String showHorizonCoordinate(int horizon) {
+        if (horizon > 0) {
+            return "3 " + horizon;
+        } else if (horizon < 0) {
+            return "2 " + Math.abs(horizon);
+        } else {
+            return "0 " + horizon;
+        }
     }
+
 }
