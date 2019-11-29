@@ -14,9 +14,9 @@ public class Main {
         String steps;
         int direction;
         int stepsQuantity;
-
         List<Integer> verticalResults = new ArrayList<Integer>();
         List<Integer> horizontalResults = new ArrayList<Integer>();
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj ile zestawów danych chcesz wczytać z zakresu <1, 50>");
         dataSets = scanner.nextInt();
@@ -34,7 +34,7 @@ public class Main {
             System.out.println("3 - wschód");
             for (int j = 0; j < movesQuantity; j++) {
                 Scanner stepsScanner = new Scanner(System.in);
-                List<String> stepsList = new ArrayList<String>();
+                List<String> stepsList;
                 treasureHunt treasureHunt = new treasureHunt();
 
                 steps = stepsScanner.nextLine();
@@ -71,13 +71,17 @@ public class Main {
             treasureHunt huntResult = new treasureHunt();
             if (verticalResults.get(i) == 0 && horizontalResults.get(i) == 0){
                 System.out.println("Studnia");
+                System.out.println("");
             } else if (verticalResults.get(i) == 0 && horizontalResults.get(i) != 0) {
                 System.out.println(huntResult.showHorizonCoordinate(horizontalResults.get(i)));
+                System.out.println("");
             } else if (verticalResults.get(i) != 0 && horizontalResults.get(i) == 0) {
                 System.out.println(huntResult.showVerticalCoordinate(verticalResults.get(i)));
+                System.out.println("");
             } else {
                 System.out.println(huntResult.showVerticalCoordinate(verticalResults.get(i)));
                 System.out.println(huntResult.showHorizonCoordinate(horizontalResults.get(i)));
+                System.out.println("");
             }
         }
     }
