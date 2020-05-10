@@ -26,8 +26,7 @@ public class Main {
         }
 
         System.out.println("Należy kupić następujące ilości cukierków");
-        for (int j = 1; j <= listOfPreschoolersInEveryClass.size(); j++){
-            if (j < listOfPreschoolersInEveryClass.size()) {
+        for (int j = 1; j < listOfPreschoolersInEveryClass.size(); j++){
                 int preschoolersInFirstClass = listOfPreschoolersInEveryClass.get(j-1);
                 int preschoolersInSecondClass = listOfPreschoolersInEveryClass.get(j);
                 int amountOfCandys = 0;
@@ -35,7 +34,7 @@ public class Main {
                     amountOfCandys = przedszk.amountOfCandysToBuy(preschoolersInFirstClass, preschoolersInSecondClass);
                     System.out.println(amountOfCandys);
                 }
-            }
+
         }
     }
 }
