@@ -28,11 +28,6 @@ public class Graph {
         listOfGraphOperations.add(graphOperation);
     }
 
-    public GraphOperation getGraphOperation(int operationNumber) {
-        GraphOperation tempOperation = listOfGraphOperations.get(operationNumber);
-        return tempOperation;
-    }
-
     public ArrayList<GraphOperation> getListOfGraphOperations() {
         return listOfGraphOperations;
     }
@@ -43,13 +38,23 @@ public class Graph {
         }
     }
 
+    private ArrayList<Vertex> buildListOfVertexNeighbours(Vertex vertex) {
+        ArrayList<Integer> listOfVertexNeighbourIds = vertex.getListOfRelations();
+        ArrayList<Vertex> listOfVertexNeighbour = new ArrayList<>();
+        for (Integer id : listOfVertexNeighbourIds) {
+            Vertex tempVertex = getVertex(id);
+            listOfVertexNeighbour.add(tempVertex);
+        }
+        return listOfVertexNeighbour;
+    }
+
     private void dfsSearch(Vertex vertex) {
         vertex.visit();
         System.out.print(vertex.getId() + " ");
         if (vertex.getListOfRelations().isEmpty()) {
             return;
         } else {
-            for (Vertex neighbor : listOfVertexes) {
+            for (Vertex neighbor : buildListOfVertexNeighbours(vertex)) {
                 if (!neighbor.isVisited()) {
                     dfsSearch(neighbor);
                 }
@@ -115,8 +120,8 @@ public class Graph {
                 System.out.println("Bledny numer operacji");
                 continue;
             }
+            resetVertexes();
         }
-        resetVertexes();
     }
 
 }
