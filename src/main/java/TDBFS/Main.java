@@ -44,7 +44,7 @@ public class Main {
                     listOfGraphs.add(graph);
                     if (loopCounter < amountOfGraphs) {
                         loopCounter++;
-                        continue;
+                        break;
                     } else {
                         break;
                     }
@@ -74,6 +74,7 @@ public class Main {
         }
         for (int j = 1; j <= listOfGraphs.size(); j++) {
             Graph graph = listOfGraphs.get(j-1);
+            System.out.println("");
             System.out.println("Graph " + j);
             graph.searchTheGraph();
         }
