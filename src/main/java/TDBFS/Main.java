@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         Integer amountOfGraphs = null;
-        ArrayList<Graph> listOfGraphs = new ArrayList<Graph>();
+        ArrayList<Graph> listOfGraphs = new ArrayList<>();
 
         System.out.println("Podaj ile grafów chcesz zbadać z przedziału <1, 100>");
         while (amountOfGraphs == null) {
@@ -35,7 +35,7 @@ public class Main {
             System.out.println("Podaj ile wierzchołków z przedziału <1, 1000> ma graf");
             while (true) {
                 Input input = new Input();
-                ArrayList<Integer> tempList = new ArrayList<>();
+                ArrayList<Integer> tempList;
 
                 tempList = input.genericInput();
                 if (tempList.size() == 1) {
@@ -74,7 +74,6 @@ public class Main {
         }
         for (int j = 1; j <= listOfGraphs.size(); j++) {
             Graph graph = listOfGraphs.get(j-1);
-            System.out.println("");
             System.out.println("Graph " + j);
             graph.searchTheGraph();
         }

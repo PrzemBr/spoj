@@ -101,12 +101,12 @@ public class Graph {
 
     public void searchTheGraph() {
         for (GraphOperation operation : listOfGraphOperations) {
-            System.out.println(" ");
             if (operation.getOperationType() == 0) {
                 int vertexId = operation.getVertexId();
                 for (Vertex vertex : listOfVertexes) {
                     if (vertex.getId() == vertexId) {
                         dfsSearch(vertex);
+                        System.out.println(" ");
                     }
                 }
             } else if (operation.getOperationType() == 1) {
@@ -114,6 +114,7 @@ public class Graph {
                 for (Vertex vertex : listOfVertexes) {
                     if (vertex.getId() == vertexId) {
                         bfsSearch(vertex);
+                        System.out.println(" ");
                     }
                 }
             } else {
