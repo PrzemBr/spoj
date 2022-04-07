@@ -9,8 +9,9 @@ public class main {
         String fileName = prepareHelper.collectFileName();
         FileToWrite file = new FileToWrite(path + fileName);
 
-        System.out.println("Enter data");
-        System.out.println("000 completes the entry");
+        prepareHelper.printFile("Enter data");
+        prepareHelper.printFile("000 completes the entry");
+
         while (true) {
             String newLine;
             Scanner lineScanner = new Scanner(System.in);
@@ -21,8 +22,7 @@ public class main {
                 file.addLine(newLine);
             }
         }
-
         file.writeToFile();
-        file.printFile();
+        prepareHelper.printFile(file.printFile());
     }
 }

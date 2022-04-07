@@ -16,11 +16,11 @@ public class FileToWrite extends File {
         listOfLines.add(line);
     }
 
-    public void printFile() {
-        System.out.println(this.getName() + '\n');
-        for (String tempString : listOfLines) {
-            System.out.println(tempString);
-        }
+    public ArrayList<String> getListOfLines() { return listOfLines; }
+
+    public ArrayList<String> printFile() {
+        listOfLines.add(0, this.getName());
+        return listOfLines;
     }
 
     public void writeToFile() {
