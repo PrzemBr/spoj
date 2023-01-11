@@ -28,4 +28,21 @@ public class FileHelper {
             System.out.println(tempString);
         }
     }
+
+    public FileToWrite lineScanner(FileToWrite file) {
+        printFile("Enter data");
+        printFile("000 completes the entry");
+        while (true) {
+            String newLine;
+            Scanner lineScanner = new Scanner(System.in);
+            newLine = lineScanner.nextLine();
+            System.out.println(newLine);
+            if (newLine.equals("000")) {
+                break;
+            } else {
+                file.addLine(newLine);
+            }
+        }
+        return file;
+    }
 }
